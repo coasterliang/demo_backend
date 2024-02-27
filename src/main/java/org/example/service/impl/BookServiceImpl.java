@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Options;
 import org.example.entity.Book;
 import org.example.service.BookService;
 import org.example.service.mapper.BookMapper;
@@ -31,5 +32,10 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     public Boolean saveClient(Book bookDetails) {
         this.saveOrUpdate(bookDetails);
         return Boolean.TRUE;
+    }
+
+    @Override
+    public Boolean deleteBook(Long id) {
+        return removeById(id);
     }
 }

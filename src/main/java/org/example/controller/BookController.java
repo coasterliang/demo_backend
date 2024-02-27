@@ -21,7 +21,13 @@ public class BookController {
     }
 
     @PostMapping("/update")
-    public R add(@RequestBody Book bookDetails) {
+    public R addUpdate(@RequestBody Book bookDetails) {
         return R.ok(bookService.saveClient(bookDetails));
     }
+
+    @GetMapping("/delete/{id}")
+    public R delete(@PathVariable("id") Long id) {
+        return R.ok(bookService.deleteBook(id));
+    }
+
 }

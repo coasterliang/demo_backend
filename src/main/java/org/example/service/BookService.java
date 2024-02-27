@@ -10,4 +10,6 @@ public interface BookService extends IService<Book> {
     List<Book> listBooks();
 
     Boolean saveClient(Book bookDetails);
+
+    Boolean deleteBook(Long id);
 }

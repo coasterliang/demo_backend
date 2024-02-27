@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 @TableName("book")
 public class Book extends Model<Book> {
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     private String name;
@@ -17,4 +17,8 @@ public class Book extends Model<Book> {
     private String author;
 
     private String intro;
+
+    private int pubYear;
+
+    private String isbn;
 }
