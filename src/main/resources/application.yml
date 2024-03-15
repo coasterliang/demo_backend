@@ -2,11 +2,6 @@ server:
   port: 8848
 
 spring:
-  datasource:
-    url: jdbc:mysql://172.16.146.168:3306/books
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       hibernate.ddl-auto: update
@@ -15,4 +10,8 @@ spring:
           dialect: org.hibernate.dialect.H2Dialect
   application:
     name: @artifactId@
+  sql:
+    init:
+      schema-locations: classpath:books.sql
+      platform: h2
 
