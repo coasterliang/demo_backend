@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Options;
 import org.example.entity.Book;
 import org.example.service.BookService;
 import org.example.service.mapper.BookMapper;
@@ -37,5 +36,12 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
     @Override
     public Boolean deleteBook(Long id) {
         return removeById(id);
+    }
+
+    @Override
+    public List<Book> query(String keyword) {
+        QueryWrapper<Book> queryWrapper = new QueryWrapper<>();
+        queryWrapper.like("name", keyword);
+        return bookMapper.selectList(queryWrapper);
     }
 }

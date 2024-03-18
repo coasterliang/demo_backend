@@ -30,4 +30,8 @@ public class BookController {
         return R.ok(bookService.deleteBook(id));
     }
 
+    @GetMapping("query/{keyword}")
+    public R query(@PathVariable("keyword") String keyword) {
+        return R.ok(bookService.query(keyword));
+    }
 }
