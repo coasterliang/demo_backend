@@ -32,4 +32,4 @@ sudo docker build -t local/hsbc-book .
 sudo docker run -p 8848:8848 -t local/hsbc-book
 ``
 
-4. check the step 3 of the local run instruction
+4. check the step 3 of the local run instruction by using the cloud server ip:8.138.21.244
