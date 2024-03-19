@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  hsbc-book:
+    image: hsbc-book:latest
+    container_name: hsbc-book
+    restart: always
+    ports:
+      - "8848:8848"

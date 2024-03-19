@@ -19,7 +19,7 @@ mvn clean & install
 
 ## deploy to cloud
 
-1. upload the target jar package & Dockerfile 
+1. upload the target jar package , Dockerfile & docker-compose.yml
 
 2. run docker build command
 
@@ -29,7 +29,7 @@ sudo docker buildx build -t local/hsbc-book .
 3. run docker deploy command
 
 ``
-sudo docker run -p 8848:8848 -t local/hsbc-book
+docker compose up -d
 ``
 
 4. check the step 3 of the local run instruction by using the cloud server ip:8.138.21.244
